@@ -1,0 +1,16 @@
+.vs/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+*.user
+*.aps
+*.pdb
+*.obj
+*.exe
+*.log
+*.tlog
+*.lastbuildstate
+*.idb
+*.ilk
+*.suo
