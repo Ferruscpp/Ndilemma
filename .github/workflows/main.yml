@@ -17,4 +17,4 @@ jobs:
       run: ls -R
 
     - name: Compile Tournament
-      run: g++ -I./src -I./strategies ./src/*.cpp ./strategies/*.cpp -o tournament
+      run: g++ -I./src -I./strategies ./src/*.cpp -o tournament
