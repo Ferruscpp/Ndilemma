@@ -16,4 +16,4 @@ jobs:
 
     - name: Compile
       run: |
-        g++ src/*.cpp strategies/*.cpp -o tournament
+        g++ -I./src -I./strategies src/*.cpp strategies/*.cpp -o tournament
