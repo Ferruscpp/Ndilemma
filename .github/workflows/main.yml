@@ -16,4 +16,4 @@ jobs:
 
     - name: Compile
       run: |
-        g++ Ndilemma/*.cpp -o tournament
+        g++ src/*.cpp strategies/*.cpp -o tournament
