@@ -1,4 +1,4 @@
-name: Check Build
+name: C++ CI
 
 on:
   push:
@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
-    - name: Compile
-      run: |
-        run: g++ -I./src -I./strategies ./src/*.cpp ./strategies/*.cpp -o tournament
+    - name: Check files
+      run: ls -R
+
+    - name: Compile Tournament
+      run: g++ -I./src -I./strategies ./src/*.cpp ./strategies/*.cpp -o tournament
