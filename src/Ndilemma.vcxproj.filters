@@ -14,7 +14,7 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Исходные файлы\strategies">
-      <UniqueIdentifier>{46623fd6-af79-4a2f-a7af-ce6cff322100}</UniqueIdentifier>
+      <UniqueIdentifier>{a40d05d8-a830-466f-bbde-31fed6dc05fc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -29,10 +29,10 @@
     <ClInclude Include="Ndilemma_game.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="all_strategies.h">
+    <ClInclude Include="..\strategies\all_strategies.h">
       <Filter>Исходные файлы\strategies</Filter>
     </ClInclude>
-    <ClInclude Include="simple_strategies.h">
+    <ClInclude Include="..\strategies\simple_strategies.h">
       <Filter>Исходные файлы\strategies</Filter>
     </ClInclude>
   </ItemGroup>

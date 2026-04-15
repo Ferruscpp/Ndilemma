@@ -102,6 +102,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)strategies</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -116,6 +117,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)strategies</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,9 +129,9 @@
     <ClCompile Include="Ndilemma_game.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="all_strategies.h" />
+    <ClInclude Include="..\strategies\all_strategies.h" />
+    <ClInclude Include="..\strategies\simple_strategies.h" />
     <ClInclude Include="Ndilemma_game.h" />
-    <ClInclude Include="simple_strategies.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
