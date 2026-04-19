@@ -20,7 +20,7 @@ public:
 	void print(ostream& out) const override
 	{
 		//pls wright your name, because it's look wonderful
-		out << "altruist number " << uid + 1 << " score:" << this->get_score(match_number);
+		out << "altruist number " << uid + 1;
 	}
 };
 
@@ -42,6 +42,6 @@ public:
 
 	void print(ostream& out) const override
 	{
-		out << "drunkard number " << uid + 1 << " score:" << this->get_score(match_number);
+		out << "drunkard number " << uid + 1;
 	}
 };

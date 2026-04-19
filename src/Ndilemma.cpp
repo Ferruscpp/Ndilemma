@@ -3,21 +3,21 @@
 #include <random>
 #include "Ndilemma_game.h"
 #include "all_strategies.h"
+#include "Tournament.cpp"
 using namespace std;
+
 
 int main()
 {
-	altruist a;
-	drunkard b;
-	vector<Player*> vec(0, nullptr);
-	vec.push_back(&a);
-	vec.push_back(&b);
-	Ndilemma game(1000, vec, true);
-	game.start();
-	cout << endl << endl;
-	vec.clear();
-	vec.push_back(&b);
-	vec.push_back(new altruist);
-	Ndilemma game2(1000, vec, true);
-	game2.start();
+	int number_of_strategies = 2;
+	vector<strategy_type> types_vec;
+	for (int i = 0; i < number_of_strategies; i++)
+	{
+		types_vec.push_back(static_cast<strategy_type>(i));
+	}
+	types_vec.push_back(static_cast<strategy_type>(0));
+	types_vec.push_back(static_cast<strategy_type>(0));
+	Tournament tournament(types_vec);
+	tournament.start();
+	return 0;
 }

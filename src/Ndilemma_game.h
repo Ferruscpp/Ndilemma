@@ -58,7 +58,7 @@ private:
 	int move_cnt;
 	bool noise;
 	int noise_chance;
-	std::mt19937 gen;
+	mt19937 gen;
 	uniform_int_distribution<> distrib;
 
 	void go();
@@ -88,4 +88,6 @@ public:
 	~Ndilemma();
 
 	void start();
+
+	vector<ll>& get_score();
 };
