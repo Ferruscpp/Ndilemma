@@ -1,43 +1,38 @@
 #include "Ndilemma_game.h"
 
-bool Player::get_history(int round, int number) const
+bool Player::get_history(int round, int target_number) const
 {
-	return game->get_history(round, number, this->number);
+	return game->get_history(round, target_number, this->uid);
 }
 
 int Player::get_rand()
 {
-	return game->get_rand(number);
+	return game->get_rand(uid);
 }
 
 int Player::get_rand(int request)
 {
-	return game->get_rand(request, number);
+	return game->get_rand(request, uid);
 }
 
 ll Player::get_score(int target_number) const
 {
-	return game->get_score(target_number, number);
+	return game->get_score(target_number, uid);
 }
 
 ll Player::count_yes(int cnt_yes, int cnt_no) const
 {
-	return game->count_yes(cnt_yes, cnt_no, number);
+	return game->count_yes(cnt_yes, cnt_no, uid);
 }
 
 ll Player::count_no(int cnt_yes, int cnt_no) const
 {
-	return game->count_no(cnt_yes, cnt_no, number);
+	return game->count_no(cnt_yes, cnt_no, uid);
 }
 
-Player::Player() : number(number_of_players), game(nullptr)
+Player::Player() : uid(total_players), game(nullptr)
 {
-	number_of_players++;
-}
-
-Player::Player(Ndilemma* _game) : number(number_of_players), game(_game)
-{
-	number_of_players++;
+	total_players++;
 }
 
 Player::~Player()
@@ -45,26 +40,17 @@ Player::~Player()
 
 }
 
-void Player::add_game(Ndilemma* _game)
+void Player::set_match(Ndilemma* _game, int _match_number, int _number_of_players)
 {
-	if (game == nullptr)
-	{
-		game = _game;
-	}
-	else
-	{
-		cerr << "!!! ERROR !!!" << endl;
-		cerr << "!!! CHANGING SETTINGS !!!" << endl;
-		cerr << "!!! Player number " << number << " want to change the game!!!" << endl;
-		cerr << "!!!BAN BAN BAN BAN BAN BAN!!!!" << endl;
-		exit(0);
-	}
+	game = _game;
+	match_number = _match_number;
+	number_of_players = _number_of_players;
 }
 
 void Player::print(ostream& out) const
 {
 	//вывод информации об игроке
-	out << "Player number " << number + 1 << " score:" << this->get_score(number);
+	out << "Player number " << uid + 1 << " score:" << this->get_score(match_number);
 }
 
 ostream& operator<<(ostream& out, const Player& player)
@@ -73,7 +59,7 @@ ostream& operator<<(ostream& out, const Player& player)
 	return out;
 }
 
-int Player::number_of_players = 0;
+int Player::total_players = 0;
 
 
 void Ndilemma::go()
@@ -256,7 +242,7 @@ void Ndilemma::start()
 {
 	for (int i = 0; i < n; i++)
 	{
-		player[i]->add_game(this);
+		player[i]->set_match(this, i, n);
 	}
 	this->go();
 	this->print_static();

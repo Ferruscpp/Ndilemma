@@ -14,4 +14,10 @@ int main()
 	vec.push_back(&b);
 	Ndilemma game(1000, vec, true);
 	game.start();
+	cout << endl << endl;
+	vec.clear();
+	vec.push_back(&b);
+	vec.push_back(new altruist);
+	Ndilemma game2(1000, vec, true);
+	game2.start();
 }

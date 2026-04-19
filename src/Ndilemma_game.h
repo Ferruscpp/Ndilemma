@@ -12,11 +12,15 @@ class Ndilemma;
 class Player
 {
 protected:
-	static int number_of_players;
-	const int number;
+	//Global
+	static int total_players;//Global number_of_players
+	const int uid;//Unique ID
+	//Local
+	int number_of_players;//local number_of_players
+	int match_number;//Match number
 	Ndilemma* game;
 	
-	bool get_history(int round, int number) const;
+	bool get_history(int round, int target_number) const;
 
 	int get_rand();
 
@@ -27,14 +31,13 @@ protected:
 	ll count_yes(int cnt_yes, int cnt_no) const;
 
 	ll count_no(int cnt_yes, int cnt_no) const;
+
 public:
 	Player();
 
-	Player(Ndilemma* _game);
-
 	virtual ~Player();
 
-	void add_game(Ndilemma* _game);
+	void set_match(Ndilemma* _game, int _match_number, int _number_of_players);
 
 	virtual bool move(int move_cnt) = 0;
 
