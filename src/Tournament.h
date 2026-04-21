@@ -1,6 +1,7 @@
 #pragma once
 #include "Ndilemma_game.h"
 #include "all_strategies.h"
+#include <memory>
 using namespace std;
 
 enum class strategy_type
