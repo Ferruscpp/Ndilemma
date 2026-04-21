@@ -24,6 +24,9 @@
     <ClCompile Include="Ndilemma_game.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Tournament.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ndilemma_game.h">
@@ -34,6 +37,9 @@
     </ClInclude>
     <ClInclude Include="..\strategies\simple_strategies.h">
       <Filter>Исходные файлы\strategies</Filter>
+    </ClInclude>
+    <ClInclude Include="Tournament.h">
+      <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

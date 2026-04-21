@@ -127,11 +127,13 @@
   <ItemGroup>
     <ClCompile Include="Ndilemma.cpp" />
     <ClCompile Include="Ndilemma_game.cpp" />
+    <ClCompile Include="Tournament.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\strategies\all_strategies.h" />
     <ClInclude Include="..\strategies\simple_strategies.h" />
     <ClInclude Include="Ndilemma_game.h" />
+    <ClInclude Include="Tournament.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
