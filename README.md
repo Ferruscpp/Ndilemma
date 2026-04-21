@@ -29,6 +29,7 @@ Think your algorithm can outsmart a crowd?
 3. **Implement** your logic: your bot receives the history of actions and score from **all** N participants.
 4. **Private Submission:** To keep your logic secret, do not use Pull Requests. Send your code to ferrus.manus.cpp@proton.me to enter the next slaughter.
 
+
 ## 🛠 Project Structure
 - `/src` — The core engine (managing N-player rounds and scoring).
 - `/strategies` — The armory (all participant bots).
