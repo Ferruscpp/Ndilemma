@@ -131,6 +131,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\strategies\all_strategies.h" />
+    <ClInclude Include="..\strategies\more_strategies.h" />
     <ClInclude Include="..\strategies\simple_strategies.h" />
     <ClInclude Include="Ndilemma_game.h" />
     <ClInclude Include="Tournament.h" />

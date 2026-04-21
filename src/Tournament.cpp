@@ -6,6 +6,23 @@ unique_ptr<Player> create_player(strategy_type id)
 	{
 	case strategy_type::altruist: return make_unique<altruist>();
 	case strategy_type::drunkard: return make_unique<drunkard>();
+	case strategy_type::pirate: return make_unique<pirate>();
+	case strategy_type::sly_pirate: return make_unique<sly_pirate>();
+	case strategy_type::judge: return make_unique<judge>();
+	case strategy_type::sly_judge: return make_unique<sly_judge>();
+	case strategy_type::stupid_judge: return make_unique<stupid_judge>();
+	case strategy_type::ostap: return make_unique<ostap>();
+	case strategy_type::accountant: return make_unique<accountant>();
+	case strategy_type::probe: return make_unique<probe>();
+	case strategy_type::punisher: return make_unique<punisher>();
+	case strategy_type::advocate: return make_unique<advocate>();
+	case strategy_type::conformist: return make_unique<conformist>();
+	case strategy_type::sly_conformist: return make_unique<sly_conformist>();
+	case strategy_type::rebel: return make_unique<rebel>();
+	case strategy_type::suspicious: return make_unique<suspicious>();
+	case strategy_type::madman: return make_unique<madman>();
+	case strategy_type::nervous: return make_unique<nervous>();
+	case strategy_type::provocateur: return make_unique<provocateur>();
 	}
 }
 

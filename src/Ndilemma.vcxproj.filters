@@ -41,6 +41,9 @@
     <ClInclude Include="Tournament.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="..\strategies\more_strategies.h">
+      <Filter>Исходные файлы\strategies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />
