@@ -113,7 +113,7 @@ void Ndilemma::print_static() const
 	cout << "The WINER: " << *player[m] << " score:" << score[m] << endl << endl;
 	for (int i = 0; i < n; i++)
 	{
-		cout << *player[i] << " score:" << score[m] << endl;
+		cout << *player[i] << " score:" << score[i] << endl;
 	}
 }
 

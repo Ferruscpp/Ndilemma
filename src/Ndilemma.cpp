@@ -13,13 +13,11 @@ int main()
 	vector<Player*> vec;
 	vec.push_back(new altruist);
 	vec.push_back(new drunkard);
-	vec.push_back(new pavlov);
 	Ndilemma game(100, vec, true);
 	game.start();
 	cout << endl;
-	exit(0);
 	//tournament
-	int number_of_strategies = 19;
+	int number_of_strategies = 2;
 	vector<strategy_type> types_vec;
 	for (int i = 0; i < number_of_strategies; i++)
 	{
