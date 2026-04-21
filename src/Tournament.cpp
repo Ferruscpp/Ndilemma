@@ -1,4 +1,4 @@
-#include "Tournament.h";
+#include "Tournament.h"
 
 unique_ptr<Player> create_player(strategy_type id)
 {
