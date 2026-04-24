@@ -9,17 +9,13 @@ using namespace std;
 
 int main()
 {
-	//one tour
-	vector<Player*> vec;
-	vec.push_back(new altruist);
-	vec.push_back(new drunkard);
-	Ndilemma game(100, vec, true);
-	game.start();
-	cout << endl;
-	//tournament
-	int number_of_strategies = 2;
+	int number_of_strategies = 29;
 	vector<strategy_type> types_vec;
-	for (int i = 0; i < number_of_strategies; i++)
+	for (int i = 0; i < min(number_of_strategies, 20); i++)
+	{
+		types_vec.push_back(static_cast<strategy_type>(i));
+	}
+	for (int i = 24; i < number_of_strategies; i++)
 	{
 		types_vec.push_back(static_cast<strategy_type>(i));
 	}

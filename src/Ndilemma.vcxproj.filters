@@ -44,6 +44,9 @@
     <ClInclude Include="..\strategies\more_strategies.h">
       <Filter>Исходные файлы\strategies</Filter>
     </ClInclude>
+    <ClInclude Include="AI_strategies.h">
+      <Filter>Исходные файлы\strategies</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include=".gitignore" />

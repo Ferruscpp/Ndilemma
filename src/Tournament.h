@@ -2,6 +2,7 @@
 #include "Ndilemma_game.h"
 #include "all_strategies.h"
 #include <memory>
+#include <conio.h>
 using namespace std;
 
 enum class strategy_type
@@ -24,7 +25,17 @@ enum class strategy_type
 	suspicious,
 	madman,
 	nervous,
-	provocateur
+	provocateur,
+	pavlov,
+	Spectrum_Zero,
+	Spectrum_Phantom,
+	Spectrum_Lite,
+	Spectrum_Aero,
+	sentinel,
+	keeper,
+	scrapper,
+	zealot,
+	inquisitor
 };
 
 unique_ptr<Player> create_player(strategy_type id);
@@ -40,4 +51,6 @@ struct Tournament
 	Tournament(vector<strategy_type>& _types_vec);
 	void generate_groups(vector<int>& group, int group_size, int last_number);
 	void start();
+	int count_s();
+	void start_evo();
 };
