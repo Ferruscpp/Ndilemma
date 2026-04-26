@@ -35,6 +35,11 @@ Player::Player() : uid(total_players), game(nullptr)
 	total_players++;
 }
 
+Player::Player(int _uid) : uid(_uid), game(nullptr)
+{
+	total_players++;
+}
+
 Player::~Player()
 {
 	total_players--;
@@ -45,6 +50,11 @@ void Player::set_match(Ndilemma* _game, int _match_number, int _number_of_player
 	game = _game;
 	match_number = _match_number;
 	number_of_players = _number_of_players;
+}
+
+int Player::get_total_players()
+{
+	return total_players;
 }
 
 void Player::print(ostream& out) const

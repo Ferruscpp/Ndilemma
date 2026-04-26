@@ -35,9 +35,13 @@ protected:
 public:
 	Player();
 
+	Player(int _uid);
+
 	virtual ~Player();
 
 	void set_match(Ndilemma* _game, int _match_number, int _number_of_players);
+
+	static int get_total_players();
 
 	virtual bool move(int move_cnt) = 0;
 

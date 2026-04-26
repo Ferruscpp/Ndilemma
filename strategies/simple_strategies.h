@@ -1,5 +1,4 @@
 #pragma once
-#include "Ndilemma_game.h"
 
 //simple strategies 4 your tests
 
@@ -8,6 +7,7 @@ class altruist : public Player
 protected:
 	//you can save some information
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		//do your choise
@@ -28,6 +28,7 @@ class drunkard : public Player
 {
 protected:
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (this->get_rand() <= 50)

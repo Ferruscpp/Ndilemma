@@ -27,6 +27,7 @@ enum class strategy_type
 	nervous,
 	provocateur,
 	pavlov,
+	zealot,
 	Spectrum_Zero,
 	Spectrum_Phantom,
 	Spectrum_Lite,
@@ -34,9 +35,10 @@ enum class strategy_type
 	sentinel,
 	keeper,
 	scrapper,
-	zealot,
 	inquisitor
 };
+
+unique_ptr<Player> create_player(strategy_type id, int _uid);
 
 unique_ptr<Player> create_player(strategy_type id);
 
@@ -48,8 +50,11 @@ struct Tournament
 	int players_cnt;
 	vector<ll> score;
 	vector<strategy_type> types_vec;
+	vector<unique_ptr<Player>> storage;
+	int prefix_uid;
 	Tournament(vector<strategy_type>& _types_vec);
 	void generate_groups(vector<int>& group, int group_size, int last_number);
+	bool comp(int a, int b);
 	void start();
 	int count_s();
 	void start_evo();

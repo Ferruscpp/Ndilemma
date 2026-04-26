@@ -1,4 +1,5 @@
-﻿#include <iostream>
+﻿#pragma once
+#include <iostream>
 #include <vector>
 #include <random>
 #include "Ndilemma_game.h"
@@ -11,11 +12,11 @@ int main()
 {
 	int number_of_strategies = 29;
 	vector<strategy_type> types_vec;
-	for (int i = 0; i < min(number_of_strategies, 20); i++)
+	for (int i = 0; i < min(number_of_strategies, 21); i++)
 	{
 		types_vec.push_back(static_cast<strategy_type>(i));
 	}
-	for (int i = 24; i < number_of_strategies; i++)
+	for (int i = 25; i < number_of_strategies; i++)
 	{
 		types_vec.push_back(static_cast<strategy_type>(i));
 	}

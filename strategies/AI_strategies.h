@@ -1,11 +1,11 @@
 #pragma once
-#include "Ndilemma_game.h"
 
 class sentinel : public Player
 {
 protected:
     int total_defectors_seen = 0;
 public:
+    using Player::Player;
     bool move(int move_cnt) override
     {
         if (move_cnt == 0)
@@ -51,7 +51,7 @@ public:
 
     void print(ostream& out) const override
     {
-        out << "sentinel number " << match_number + 1;
+        out << "sentinel number " << uid + 1;
     }
 };
 
@@ -60,6 +60,7 @@ class keeper : public Player
 protected:
     int mood = 0;
 public:
+    using Player::Player;
     bool move(int move_cnt) override
     {
         if (move_cnt == 0)
@@ -105,7 +106,7 @@ public:
 
     void print(ostream& out) const override
     {
-        out << "keeper number " << match_number + 1;
+        out << "keeper number " << uid + 1;
     }
 };
 
@@ -113,8 +114,8 @@ class scrapper : public Player
 {
 protected:
     int revenge_counter = 0;
-
 public:
+    using Player::Player;
     bool move(int move_cnt) override
     {
         if (move_cnt == 0)
@@ -178,7 +179,7 @@ public:
 
     void print(ostream& out) const override
     {
-        out << "scrapper number " << match_number + 1;
+        out << "scrapper number " << uid + 1;
     }
 };
 
@@ -186,6 +187,7 @@ class inquisitor : public Player
 {
 protected: long long total_avg_score = 0;
 public:
+    using Player::Player;
     bool move(int move_cnt) override
     {
         if (move_cnt == 0)
@@ -249,6 +251,6 @@ public:
     }
     void print(ostream& out) const override
     {
-        out << "inquisitor number " << match_number + 1;
+        out << "inquisitor number " << uid + 1;
     }
 };

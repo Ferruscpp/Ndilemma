@@ -1,5 +1,4 @@
 #pragma once
-#include "Ndilemma_game.h"
 #include <unordered_map>
 #ifdef _MSC_VER
 #include <intrin.h>
@@ -10,6 +9,7 @@ class pirate : public Player
 {
 protected:
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		return false;
@@ -25,6 +25,7 @@ class sly_pirate : public Player
 {
 protected:
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (this->get_rand() <= 70)
@@ -48,6 +49,7 @@ class judge : public Player
 protected:
 	vector<ll> g, b;
 public:
+	using Player::Player;
 	virtual bool move(int move_cnt) override
 	{
 		if (g.empty())
@@ -109,6 +111,7 @@ class sly_judge : public judge
 {
 protected:
 public:
+	using judge::judge;
 	bool move(int move_cnt) override
 	{
 		bool decision = judge::move(move_cnt);
@@ -141,6 +144,7 @@ class stupid_judge : public judge
 {
 protected:
 public:
+	using judge::judge;
 	bool move(int move_cnt) override
 	{
 		bool decision = judge::move(move_cnt);
@@ -165,6 +169,7 @@ class ostap : public Player
 protected:
 	vector<ll> g, b;
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (g.empty())
@@ -262,6 +267,7 @@ class accountant : public Player
 {
 protected:
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (move_cnt == 0)
@@ -301,6 +307,7 @@ class probe : public Player
 protected:
 	ll statistic;
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (move_cnt == 0)
@@ -397,6 +404,7 @@ protected:
 	vector<ll> g, b;
 	vector<bool> traitors;
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (g.empty())
@@ -473,6 +481,7 @@ protected:
 	vector<ll> g, b;
 	vector<bool> traitors;
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (g.empty())
@@ -543,6 +552,7 @@ class conformist : public Player
 {
 protected:
 public:
+	using Player::Player;
 	virtual bool move(int move_cnt) override
 	{
 		if (move_cnt == 0)
@@ -584,6 +594,7 @@ class sly_conformist : public conformist
 {
 protected:
 public:
+	using conformist::conformist;
 	bool move(int move_cnt) override
 	{
 		bool decision = conformist::move(move_cnt);
@@ -607,6 +618,7 @@ class rebel : public conformist
 {
 protected:
 public:
+	using conformist::conformist;
 	bool move(int move_cnt) override
 	{
 		bool decision = conformist::move(move_cnt);
@@ -637,6 +649,7 @@ class suspicious : public Player
 {
 protected:
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (move_cnt == 0)
@@ -668,6 +681,7 @@ class madman : public Player
 protected:
 	ll revenge_timer;
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (move_cnt == 0)
@@ -713,6 +727,7 @@ class nervous : public Player
 protected:
 	ll revenge_timer;
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (move_cnt == 0)
@@ -760,6 +775,7 @@ class provocateur : public Player
 {
 protected:
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (this->get_rand(number_of_players) <= 1)
@@ -783,6 +799,7 @@ class pavlov : public Player
 protected:
 	ll barrier;
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (move_cnt == 0)
@@ -855,6 +872,7 @@ protected:
 		return ans;
 	}
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (move_cnt == 0)
@@ -1042,6 +1060,7 @@ class Spectrum_Phantom : public Player//he is to heavy for me
 protected:
 	unordered_map<int, int> echo;
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (move_cnt < 1 << (number_of_players - 1))
@@ -1228,6 +1247,7 @@ class Spectrum_Lite : public Player//he is to heavy for me
 protected:
 	unordered_map<bitset<7>, bitset<7>> echo;
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (move_cnt >= 2)//count static
@@ -1355,6 +1375,7 @@ class Spectrum_Aero : public Player//he is to heavy for me
 protected:
 	vector<bitset<7>> echo;
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (move_cnt == 0)
@@ -1485,6 +1506,7 @@ class zealot : public Player
 {
 protected:
 public:
+	using Player::Player;
 	bool move(int move_cnt) override
 	{
 		if (move_cnt == 0)
