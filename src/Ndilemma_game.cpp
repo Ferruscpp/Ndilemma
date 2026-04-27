@@ -33,6 +33,7 @@ ll Player::count_no(int cnt_yes, int cnt_no) const
 Player::Player() : uid(total_players), game(nullptr)
 {
 	total_players++;
+	
 }
 
 Player::Player(int _uid) : uid(_uid), game(nullptr)
@@ -71,6 +72,7 @@ ostream& operator<<(ostream& out, const Player& player)
 
 int Player::total_players = 0;
 
+mt19937 Ndilemma::gen(random_device{}());
 
 void Ndilemma::go()
 {
@@ -224,13 +226,13 @@ ll Ndilemma::count_no(int cnt_yes, int cnt_no, int client_number) const
 	return (cnt_no - 1) * cnt_no;
 }
 
-Ndilemma::Ndilemma(int _totalRounds, vector<Player*> _player, bool _noise) : totalRounds(_totalRounds), n(_player.size()), player(_player), noise(_noise), gen(random_device{}()), distrib(1, 100), move_cnt(0)
+Ndilemma::Ndilemma(int _totalRounds, vector<Player*> _player, bool _noise) : totalRounds(_totalRounds), n(_player.size()), player(_player), noise(_noise), noise_chance(1), distrib(1, 100), move_cnt(0)
 {
 	history.resize(totalRounds, vector<bool>(n));
 	score.resize(n, 0);
 }
 
-Ndilemma::Ndilemma(int _totalRounds, vector<Player*> _player, bool _noise, int _noise_chance) : totalRounds(_totalRounds), n(_player.size()), player(_player), noise(_noise), noise_chance(_noise_chance), gen(random_device{}()), distrib(1, 100), move_cnt(0)
+Ndilemma::Ndilemma(int _totalRounds, vector<Player*> _player, bool _noise, int _noise_chance) : totalRounds(_totalRounds), n(_player.size()), player(_player), noise(_noise), noise_chance(_noise_chance), distrib(1, 100), move_cnt(0)
 {
 	history.resize(totalRounds, vector<bool>(n));
 	score.resize(n, 0);

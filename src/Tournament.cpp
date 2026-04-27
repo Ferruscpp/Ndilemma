@@ -224,7 +224,7 @@ void Tournament::start_evo()
 			cout << *storage[i] << " score:" << score[i] << endl;
 		}
 		cout << "Max " << Max + 1 << ". Min " << Min + 1 << endl;*/
-		cout << "Iteration number " << it_cnt + 1 << ". Extinct: " << storage[Max] << ". Multiplied: " << storage[Min] << ".\n";
+		cout << "Iteration number " << it_cnt + 1 << ". Extinct: " << *storage[Max] << ". Multiplied: " << *storage[Min] << ".\n";
 		types_vec[Max] = types_vec[Min];
 		it_cnt++;
 	}

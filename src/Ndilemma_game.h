@@ -62,7 +62,7 @@ private:
 	int move_cnt;
 	bool noise;
 	int noise_chance;
-	mt19937 gen;
+	static mt19937 gen;
 	uniform_int_distribution<> distrib;
 
 	void go();
